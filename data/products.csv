@@ -1,0 +1,14 @@
+id,name,category
+p01,NPK Compound Fertilizer,fertilizer
+p02,Corn Starch,food-ingredient
+p03,High Fructose Corn Syrup (HFCS),sweetener
+p04,Soybean Meal,animal-feed
+p05,Soybean Oil,food-oil
+p06,Wheat Flour,food-ingredient
+p07,Animal Feed,animal-feed
+p08,Ethanol,fuel
+p09,Poultry Products,meat
+p10,Pork Products,meat
+p11,Processed Food,packaged-food
+p12,Carbonated Soft Drinks,beverage
+p13,Snack Foods,packaged-food
