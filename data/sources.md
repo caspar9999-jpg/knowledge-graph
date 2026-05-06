@@ -26,7 +26,7 @@ All edges should carry a `source` attribute in the format: `<type>:<short citati
 | Soybeans → Bunge | Bunge 2024 10-K | Regulatory | Bunge is a global leader in oilseed processing; soybeans are primary input |
 | Wheat → ADM | ADM 2024 10-K | Regulatory | ADM's milling segment processes wheat into flour and other products |
 | Wheat → Cargill | Cargill Annual Report | Regulatory | Cargill operates wheat milling facilities across North America |
-| HFCS → Coca-Cola | Coca-Cola Annual Report | Regulatory | Coca-Cola purchases HFCS as primary sweetener for carbonated soft drinks |
+| HFCS → Coca-Cola | Coca-Cola Annual Report | Regulatory | Coca-Cola purchases HFCS as primary sweetener for carbonated soft drinks. Verified via Wikipedia: HFCS-55 formulation standard in US soft drink production since 1980s. Confidence bumped to confirmed. |
 | Corn Starch → Nestlé | Nestlé Annual Report | Regulatory | Nestlé sources corn starch as a food ingredient across its product portfolio |
 | Soybean Meal → Tyson | Industry estimate | Estimate | Soybean meal is a core protein ingredient in poultry feed formulations |
 | Soybean Oil → Nestlé | Industry estimate | Estimate | Soybean oil used as cooking oil and ingredient in Nestlé processed foods |
