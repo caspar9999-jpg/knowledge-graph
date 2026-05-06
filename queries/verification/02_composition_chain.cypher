@@ -4,9 +4,8 @@
 //
 // Parameters:
 //   $start_material: node id for the input material (default: 'm01' = Potash)
-//   $max_depth: max traversal hops (default: 6)
 
-MATCH path = (material {id: $start_material})-[:用于*1..$max_depth]->(product:Product)
+MATCH path = (material {id: $start_material})-[:用于*1..6]->(product:Product)
 WHERE NOT EXISTS {
   (product)-[:用于]->()
 }

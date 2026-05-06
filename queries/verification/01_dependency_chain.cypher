@@ -5,15 +5,19 @@
 // The path may use [:提供] (company produces product) and
 // [:供应给] (commercial supply) in any combination.
 //
+// Note: Cypher does not support parameters in variable-length
+// path bounds. Max depth is hardcoded to 6 (configurable by
+// editing the query).
+//
 // Parameters:
 //   $start_company: Company.id to start from (default: 'c01' = Nutrien)
 //   $confidence_levels: allowed confidence values (default: ['confirmed', 'inferred'])
-//   $max_depth: max traversal hops (default: 6)
 
 MATCH path = (start:Company {id: $start_company})
-            -[:提供|供应给*1..$max_depth]->
+            -[:提供|供应给*1..6]->
             (end:Company)
-WHERE ALL(rel IN relationships(path) WHERE rel.confidence IN $confidence_levels)
+WHERE ALL(rel IN relationships(path) 
+          WHERE NOT type(rel) = '供应给' OR rel.confidence IN $confidence_levels)
   AND NOT start = end
   AND length(path) >= 2
 RETURN path,

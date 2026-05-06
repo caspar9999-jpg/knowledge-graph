@@ -6,11 +6,13 @@ SCHEMA_DIR = os.path.join(os.path.dirname(__file__), '..', 'schema')
 def run_cypher_file(session, filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
-    for statement in content.split(';'):
+    lines = [line for line in content.split('\n') if not line.strip().startswith('//')]
+    clean = '\n'.join(lines)
+    for statement in clean.split(';'):
         stmt = statement.strip()
-        if stmt and not stmt.startswith('//'):
+        if stmt:
             session.run(stmt)
-            print(f"  executed: {stmt[:60]}...")
+            print(f"  executed: {stmt[:60].encode('ascii', errors='replace').decode()}...")
 
 def main():
     uri = os.getenv('NEO4J_URI', 'bolt://localhost:7687')

@@ -6,12 +6,11 @@
 // (buyer + seller) and physical composition dependencies.
 //
 // Parameters:
-//   $max_depth: max traversal hops (default: 3)
 //   $min_companies: minimum companies sharing this node (default: 2)
 
 MATCH (m:Product)
 WITH m
-MATCH (c:Company)-[*1..$max_depth]-(m)
+MATCH (c:Company)-[*1..2]-(m)
 WITH m, collect(DISTINCT c.id) AS related_companies
 WHERE size(related_companies) >= $min_companies
 RETURN m.id AS dependency_id,

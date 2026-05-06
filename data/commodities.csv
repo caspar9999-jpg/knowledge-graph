@@ -1,7 +1,7 @@
 id,name,major_producing_countries
-m01,Potash,CA,RU,BY
-m02,Urea,CN,IN,US
-m03,DAP,CN,IN,US
-m04,Corn,US,CN,BR
-m05,Soybeans,US,BR,AR
-m06,Wheat,CN,IN,RU
+m01,Potash,"CA,RU,BY"
+m02,Urea,"CN,IN,US"
+m03,DAP,"CN,IN,US"
+m04,Corn,"US,CN,BR"
+m05,Soybeans,"US,BR,AR"
+m06,Wheat,"CN,IN,RU"
