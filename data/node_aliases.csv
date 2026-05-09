@@ -1,0 +1,26 @@
+node_id,alias
+c01,Nutrien Ltd.
+c01,NTR
+c02,Yara
+c03,The Mosaic Company
+c04,Archer-Daniels-Midland
+c05,Bunge Limited
+c06,Cargill Incorporated
+c07,Tyson
+c08,Nestle
+c09,Coca-Cola
+m01,Potash
+m02,Urea
+m03,DAP
+m04,Corn
+m05,Soybeans
+m06,Wheat
+p01,NPK
+p03,HFCS
+p04,Soybean meal
+p06,Wheat flour
+p07,Feed
+p09,Poultry
+p10,Pork
+p12,Carbonated soft drinks
+p13,Snacks
