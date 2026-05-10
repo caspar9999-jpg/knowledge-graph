@@ -6,36 +6,35 @@ How the engineering skills should consume this repo's domain documentation when 
 
 - **`CONTEXT.md`** at the repo root, or
 - **`CONTEXT-MAP.md`** at the repo root if it exists — it points at one `CONTEXT.md` per context. Read each one relevant to the topic.
-- **`docs/adr/`** — read ADRs that touch the area you're about to work in. In multi-context repos, also check `src/<context>/docs/adr/` for context-scoped decisions.
+- **`DECISIONS.md`** — architecture decision records for this repo.
+- **`design.md`** / **`design_en.md`** — data model, entity/relationship inventory, ADRs.
+- **`CONTEXT.md`** — domain glossary.
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The producer skill (`/grill-with-docs`) creates them lazily when terms or decisions actually get resolved.
 
 ## File structure
 
-Single-context repo (most repos):
-
 ```
 /
-├── CONTEXT.md
-├── docs/adr/
-│   ├── 0001-event-sourced-orders.md
-│   └── 0002-postgres-for-write-model.md
-└── src/
-```
-
-Multi-context repo (presence of `CONTEXT-MAP.md` at the root):
-
-```
-/
-├── CONTEXT-MAP.md
-├── docs/adr/                          ← system-wide decisions
-└── src/
-    ├── ordering/
-    │   ├── CONTEXT.md
-    │   └── docs/adr/                  ← context-specific decisions
-    └── billing/
-        ├── CONTEXT.md
-        └── docs/adr/
+├── README.md               # Usage guide
+├── design.md               # Data model + ADRs (Chinese)
+├── design_en.md            # Data model + ADRs (English)
+├── CONTEXT.md              # Domain glossary
+├── DECISIONS.md            # ADRs
+├── AGENTS.md               # Agent skills
+├── schema/
+│   ├── constraints.cypher
+│   └── validation.cypher
+├── data/
+│   ├── companies.csv
+│   ├── commodities.csv
+│   ├── products.csv
+│   └── edges_*.csv
+├── scripts/
+│   ├── 00_schema_init.py
+│   ├── 01_load_data.py
+│   └── 02_import_relations.py
+└── queries/verification/
 ```
 
 ## Use the glossary's vocabulary

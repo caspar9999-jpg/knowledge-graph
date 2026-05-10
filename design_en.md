@@ -293,7 +293,6 @@ Five standard queries, each in a separate `.cypher` file:
 
 ```
 C:\Projects\knowledge_graph\
-├── design.md                     # This file: data model + ADRs
 ├── schema/
 │   ├── constraints.cypher        # Uniqueness constraints + indexes
 │   └── validation.cypher         # Data quality validation queries
@@ -306,8 +305,13 @@ C:\Projects\knowledge_graph\
 │   ├── edges_supply.csv          # columns: from_id, to_id, confidence, valid_from, valid_until, source
 │   └── edges_used_in.csv         # columns: from_id, to_id, valid_from, valid_until, source
 ├── scripts/
-│   ├── 00_schema_init.ipynb      # Run constraints + validation scripts
-│   └── 01_load_data.ipynb        # LOAD CSV data import pipeline
+│   ├── 00_schema_init.py         # Create Neo4j constraints + indexes
+│   ├── 01_load_data.py           # Bulk-load CSV data into Neo4j
+│   ├── 02_import_relations.py   # Import relations JSONL from EC pipeline
+│   ├── run_queries.py            # Run verification Cypher queries
+│   ├── verify_ac1.py             # Acceptance criteria verification
+│   ├── diagnose.py               # Diagnostic checks
+│   └── check_version.py          # Version checker
 ├── queries/
 │   └── verification/
 │       ├── 01_dependency_chain.cypher
@@ -315,6 +319,13 @@ C:\Projects\knowledge_graph\
 │       ├── 03_common_dependency.cypher
 │       ├── 04_alternate_supplier.cypher
 │       └── 05_hub_analysis.cypher
+├── design.md                     # Data model + ADRs
+├── design_en.md                  # English version of design.md
+├── README.md                     # Project overview & quick start
+├── CONTEXT.md                    # Domain glossary
+├── AGENTS.md                     # Agent skills & triage labels
+├── DECISIONS.md                  # Architecture decision records
+├── .env.example                  # Environment variable template
 └── requirements.txt              # neo4j, jupyter, pandas
 ```
 
