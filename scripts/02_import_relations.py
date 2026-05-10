@@ -75,7 +75,7 @@ def main() -> None:
     print("  OK")
 
     print("Step 3: Importing relations...")
-    resolver = EntityResolver(driver, llm=None)
+    resolver = EntityResolver(driver)
     with driver.session() as session:
         resolver.load_cache(session)
     importer = EarningsCallImporter(driver, resolver)
